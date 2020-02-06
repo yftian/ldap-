@@ -36,7 +36,7 @@ b.过滤掉系统信息
 ```
 cat ldapback.ldif | sed -f slapcat.regex > slapdata.ldif
 ```
-c.将过滤好的问价导入my-openldap容器
+c.将过滤好的文件导入my-openldap容器
 ```
 docker cp slapdata.ldif my-openldap:/opt
 ```
