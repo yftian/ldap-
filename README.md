@@ -36,6 +36,10 @@ b.过滤掉系统信息
 ```
 cat ldapback.ldif | sed -f slapcat.regex > slapdata.ldif
 ```
+c.将过滤好的问价导入my-openldap容器
+```
+docker cp slapdata.ldif my-openldap:/opt
+```
 3、使用ldapadd导入  
 ```
 ldapadd -c  -x -D "cn=admin,dc=my-company,dc=com" -w 123456 -f slapdata.ldif
